@@ -1,7 +1,7 @@
 import allure
 
 from pages.base_page import BasePage
-from locators import BaseLocators, MainLocators
+from locators import MainLocators
 
 
 class MainPage(BasePage):
@@ -18,7 +18,7 @@ class MainPage(BasePage):
 
     @allure.step('Клик на кнопку закрытия в окне ингредиента')
     def click_close_button(self):
-        self.move_to_element_and_press(BaseLocators.CLOSE_BUTTON)
+        self.move_to_element_and_press(MainLocators.CLOSE_BUTTON)
 
     @allure.step('Клик на кнопку Оформить заказ')
     def click_order_button(self):
@@ -50,5 +50,26 @@ class MainPage(BasePage):
         self.find_element(MainLocators.ORDER_IS_PREPARING_TEXT)
         self.wait_until_element_invisible(MainLocators.DEFAULT_ORDER_NUMBER)
         created_order = self.get_text_from_element(MainLocators.ORDER_NUMBER_IN_CONSTRUCTOR)
-        self.move_to_element_and_press(BaseLocators.CLOSE_BUTTON)
+        self.move_to_element_and_press(MainLocators.CLOSE_BUTTON)
         return created_order
+
+    def find_element_constructor_title(self):
+        return self.find_element(MainLocators.CONSTRUCTOR_TITLE)
+
+    def find_element_ingredient_details_title(self):
+        return self.find_element(MainLocators.INGREDIENT_DETAILS_TITLE)
+
+    def find_element_ingredient_details_modal(self):
+        return self.wait_until_element_invisible(MainLocators.INGREDIENT_DETAILS_MODAL)
+
+    def find_element_ingredient_bun(self):
+        return self.find_element(MainLocators.INGREDIENT_BUN)
+
+    def find_element_order_create_button(self):
+        return self.find_element(MainLocators.ORDER_CREATE_BUTTON)
+
+    def find_element_order_number_in_constructor(self):
+        return self.find_element(MainLocators.ORDER_NUMBER_IN_CONSTRUCTOR)
+
+    def find_element_order_is_preparing_text(self):
+        return self.find_element(MainLocators.ORDER_IS_PREPARING_TEXT)

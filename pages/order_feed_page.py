@@ -27,3 +27,12 @@ class OrderFeedPage(BasePage):
     @allure.step('Получить значение счетчика В работе')
     def get_order_number_in_work_list(self):
         return self.get_text_from_element(OrderFeedLocators.ORDER_NUMBER_IN_WORK)
+
+    def find_element_order_feed_title(self):
+        return self.find_element(OrderFeedLocators.ORDER_FEED_TITLE)
+
+    def find_element_order_contents_title(self):
+        return self.find_element(OrderFeedLocators.ORDER_CONTENTS_TITLE)
+
+    def find_element_order_number_in_work(self):
+        return self.get_text_from_element(OrderFeedLocators.ORDER_NUMBER_IN_WORK)

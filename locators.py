@@ -11,22 +11,22 @@ class AccountLocators:
 
 class BaseLocators:
     ACCOUNT_LINK = By.XPATH, '//*[@href="/account"]'
-    CLOSE_BUTTON = By.XPATH, '//button[contains(@class,"close")]'
     CONSTRUCTOR_LINK = By.XPATH, '//p[text()="Конструктор"]/parent::a'
-    EMAIL_FIELD = By.XPATH, '//label[text()="Email"]/following-sibling::input'
     ORDER_FEED_LINK = By.XPATH, '//p[text()="Лента Заказов"]/parent::a'
-    PASSWORD_FIELD = By.XPATH, '//input[@type="password"]'
 
 
 class LoginLocators:
     ENTER_BUTTON = By.XPATH, '//button[text()="Войти"]'
     FORGOT_PASSWORD_LINK = By.XPATH, '//*[@href="/forgot-password"]'
+    EMAIL_FIELD = By.XPATH, '//label[text()="Email"]/following-sibling::input'
+    PASSWORD_FIELD = By.XPATH, '//input[@type="password"]'
 
 
 class MainLocators:
     CONSTRUCTOR_TITLE = By.XPATH, '//h1[text()="Соберите бургер"]'
     DEFAULT_ORDER_NUMBER = By.XPATH, '//h2[text()="9999"]'
     ENTER_ACCOUNT_BUTTON = By.XPATH, '//button[text()="Войти в аккаунт"]'
+    CLOSE_BUTTON = By.XPATH, '//button[contains(@class,"close")]'
     INGREDIENT_BUN = By.XPATH, '//*[@href="/ingredient/61c0c5a71d1f82001bdaaa6c"]'
     INGREDIENT_COUNTER = By.XPATH, '//*[@href="/ingredient/61c0c5a71d1f82001bdaaa6c"]//p[contains(@class, "counter__num")]'
     INGREDIENT_DETAILS_MODAL = By.XPATH, '//*[@id="root"]/div/section/div[1]'
@@ -53,5 +53,6 @@ class OrderFeedLocators:
 class ResetPasswordLocators:
     RESET_BUTTON = By.XPATH, '//button[text()="Восстановить"]'
     SAVE_BUTTON = By.XPATH, '//button[text()="Сохранить"]'
+    EMAIL_FIELD = By.XPATH, '//label[text()="Email"]/following-sibling::input'
     SHOW_PASSWORD_ICON = By.XPATH, '//div[contains(@class,"icon-action")]'
     PASSWORD_FIELD_ACTIVE = By.CSS_SELECTOR, '.input.input_status_active'

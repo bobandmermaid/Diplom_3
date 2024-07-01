@@ -17,3 +17,16 @@ class ProfilePage(BasePage):
     @allure.step('Клик на Выход')
     def click_exit_button(self):
         self.click_element(AccountLocators.LOGOUT_BUTTON)
+
+    def find_element_profile_link(self):
+        return self.find_element(AccountLocators.PROFILE_LINK)
+
+    def find_element_order_history_link(self):
+        return self.find_element(AccountLocators.ORDER_HISTORY_LINK)
+
+    def find_element_order_completed(self):
+        return self.find_element(AccountLocators.ORDER_COMPLETED_TEXT)
+
+    def find_element_logout_button(self):
+        return self.find_element(AccountLocators.LOGOUT_BUTTON)
+
